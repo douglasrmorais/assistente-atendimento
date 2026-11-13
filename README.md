@@ -94,19 +94,8 @@ O campo `origem` mostra quem respondeu: `regra`, `llm` ou `fallback`.
 
 Exemplo de saída do `relatorio.py`:
 
-```
-=== Como o bot respondeu ===
-origem    respostas  percentual
---------  ---------  ----------
-regra     21         87.5
-fallback  3          12.5
+![Saída do relatório SQL](docs/relatorio.png)
 
-=== Perguntas que o bot não soube responder ===
-pergunta_sem_resposta    vezes
------------------------  -----
-tem opção vegana?        2
-posso pedir sem cebola?  1
-```
 
 ## Como funciona
 
