@@ -32,7 +32,7 @@ def saude():
 @app.post("/chat", response_model=ChatSaida, tags=["chat"])
 def chat(entrada: ChatEntrada):
     """Recebe a mensagem do cliente e devolve a resposta do bot."""
-    if entrada.conversa_id is None:
+    if not entrada.conversa_id:
         conversa_id = database.criar_conversa()
     elif database.conversa_existe(entrada.conversa_id):
         conversa_id = entrada.conversa_id
