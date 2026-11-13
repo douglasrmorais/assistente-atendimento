@@ -69,3 +69,10 @@ def test_conversa_inexistente_retorna_404(client):
 
 def test_mensagem_vazia_retorna_422(client):
     assert client.post("/chat", json={"mensagem": "   "}).status_code == 422
+
+
+def test_conversa_id_zero_cria_conversa_nova(client):
+    # O Swagger (/docs) preenche conversa_id com 0 por padrão
+    r = client.post("/chat", json={"mensagem": "Oi", "conversa_id": 0})
+    assert r.status_code == 200
+    assert r.json()["conversa_id"] == 1
